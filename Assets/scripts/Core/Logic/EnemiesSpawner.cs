@@ -4,6 +4,9 @@ using UnityEngine;
 
 public static class EnemiesSpawner
 {
+    /// <summary>
+    /// enemie types that being spawned
+    /// </summary>
     public static List<EnemyType> EnemieTypes;
     public static void InitializeEnemies(GameObject[] prefabs)
     {
@@ -16,12 +19,12 @@ public static class EnemiesSpawner
             }
         }
     }
-    public static void SpawnUnit(GameObject EnemyPrefab)
+    public static void SpawnEnemy(GameObject EnemyPrefab)
     {
         GameObject enemy = GameObject.Instantiate(EnemyPrefab, GameLogic.GetRandomBorderPosition(), Quaternion.identity);
     }
     public static void DestroyBigAsteroid(GameObject asteroid)
-    {
+    { //asteroid collapses to many particles
         int ParticlesCount = Random.Range(1, 5);
         for (int i = 0; i < ParticlesCount; i++)
         {

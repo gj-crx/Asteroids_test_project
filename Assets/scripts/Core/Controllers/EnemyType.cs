@@ -11,7 +11,7 @@ public class EnemyType : MonoBehaviour
         if (timer_Spawning > SpawningInternal)
         {
             timer_Spawning = 0;
-            EnemiesSpawner.SpawnUnit(gameObject);
+            EnemiesSpawner.SpawnEnemy(gameObject);
         }
         else
         {
